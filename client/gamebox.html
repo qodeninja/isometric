@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+
+  <head>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+
+  <body>
+
+
+
+  <div id='wrapper'  class='noselect'  >
+
+      <div id='gamebox' class='noselect' data-map='isometric'>
+
+        <div id='canvas' class='noselect _mousearea'>
+          <div id="selectedCell"></div>
+
+
+          <div id="crossX" class='noselect'></div>
+          <div id="crossY" class='noselect'></div>
+          <div id="mouse" class='noselect'><span>(0,0)<span></div>
+
+        </div>
+
+        <div id='debug' >
+
+          <fieldset class='mouse'>
+            <label id='xpos'>X<span>0000</span></label>
+            <label id='ypos'>Y<span>0000</span></label>
+            <label id='zpos'>Z<span>(0,0)</span></label>
+
+            <label id='dxpos'>DX<span>0000</span></label>
+            <label id='dypos'>DY<span>0000</span></label>
+
+            <label id='dragging'>D<span>--</span></label>
+          </fieldset>
+
+
+          <div class='tags'>
+             <a href='#stop'  class='tag _mouseStatus' id='mousestop'><span >STOP</span></a>
+             <a href='#move'  class='tag' id='mousemove'><span >MOVE</span></a>
+             <a href='#down' class='tag' id='mousedown'><span >DOWN</span></a>
+             <a href='#click' class='tag' id='mouseclick'><span >CLICK</span></a>
+             <a href='#drag'  class='tag' id='mousedrag'><span >DRAG</span></a>
+             <a href='#drop'  class='tag' id='mousedrop'><span >DROP</span></a>
+             <a href='#mousebound' class='tag' id='mousebound'><span >CANVAS</span></a>
+             <a href='#gridon' class='tag' id='mousegrid'><span >GRID</span></a>
+
+          </div>
+
+        </div>
+      </div>
+
+
+
+
+  </div>
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!--
+    <script src="isometric/isometric.js"></script>
+    <script src="isometric/event.drag.js"></script>
+    <script src="isometric/event.drop.js"></script>
+     -->
+    <script src="isometric/lib/mouse.js" ></script>
+    <script src="isometric/lib/plotter.js" ></script>
+    <!-- <script src="isometric/debug.mouse.js"></script> -->
+    <script>
+      $(document).ready(function(){
+
+//        $('#canvas').on('drag',function(){
+//          console.log("[DRAG] Canvas");
+//        });
+
+        //$(document).MouseBuddy( { } );
+
+          $('#gamebox ._mousearea').Mouse({
+            plotter : true
+          });
+
+      });
+
+      function child_function(){
+        alert('im the child function');
+      }
+    </script>
+  </body>
+
+
+</html>

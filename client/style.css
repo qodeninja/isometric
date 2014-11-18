@@ -1,0 +1,101 @@
+body { font-family:verdana, arial, sans-serif; margin:0; padding:0; }
+
+
+#wrapper {  position:relative; margin:0; padding:0;  }
+
+
+iframe#gameboxFrame{
+  width:812px;
+  height:522px;
+  margin:auto;
+  margin-top:50px;
+  display: block;
+  border:3px solid #ccc;
+  overflow: hidden;
+}
+
+#gamebox[data-map=isometric]{
+  width:800px;
+  height:400px;
+  margin:5px;
+  font-family:"open sans", arial, sans-serif;
+  position:relative;
+}
+
+
+#debug{ display:block;  width:100%; height:75px }
+#debug.hide, .hide { display:none; }
+
+#mousestop.on{ background:regd; }
+#mousemove.on{ background:green; }
+#mouseclick.on{ background:green; }
+#mousedown.on{ background:green; }
+#mousedrag.on{ background:magenta; }
+#mousedrop.on{ background:magenta; }
+#mousegrid.on{ background:#333; }
+#mousebound.on{ background:#333; }
+
+
+
+#canvas{  background:url(grid_g.png) repeat #efefef;border:1px solid #ccc; width:800px; height:400px }
+#canvas.selected { border:1px solid green; }
+
+
+fieldset.mouse { border: none; }
+
+fieldset.mouse label { font-weight:bold; width:80px; display:inline-block }
+fieldset.mouse label span { font-weight:normal; color:red; width:50px; display:inline-block  }
+
+.tags{
+ padding-left:25px;
+}
+
+a.tag{
+ text-decoration:none;
+ font-size:10px;
+ color:white;
+ background:#ccc;
+ height:10px;
+ padding:2px 5px;
+}
+
+
+div.x { position:absolute;border:1px solid #333; width:2px; height:2px; background:red; color:#333; font-size:8px; margin-left:4px }
+div.d { position:absolute;border:1px solid green; width:2px; height:2px; background:green; color:green }
+div.n { position:absolute;border:1px solid black; width:2px; height:2px; background:black; color:black }
+
+#mouse{ position:absolute; height:3px; width:3px; background:red; font-size:10px; color:red; /*outline:red dotted thin*/ }
+#mouse span{ display:block; width:70px; height:15px;  margin-top:-15px; margin-left:5px  }
+
+#selectedCell{ width:64px; height:32px; background:url(grid_r.png) transparent no-repeat; position:absolute; }
+#selectedCell.click { background:url(grid_r_click.png) transparent no-repeat; }
+
+#crossY{ position:absolute; width:100%; height:0px; border-bottom:1px dashed #333; background:transparent; top:0px; left:0px; }
+#crossX{ position:absolute; width:0px; height:100%; border-left:1px dashed #333; background:transparent; top:0px; left:0px; }
+#crossY.disabled, #crossX.disabled { border-color:#ccc }
+
+.noselect, ._ns {
+  -webkit-touch-callout: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select:none;
+  -o-user-select: none;
+  user-select: none;
+  cursor:default;
+
+}
+
+
+#new-link-line {
+    position: absolute; /* allows to position it anywhere */
+    width: 1px; /* your chosen line width */
+    background-color: #06a; /* line color */
+    z-index: 1000; /* make sure this is above your other elements */
+    -webkit-transform-origin: top left;
+    -moz-transform-origin: top left;
+    -o-transform-origin: top left;
+    -ms-transform-origin: top left;
+    transform-origin: top left;
+    /* transform-origin sets rotation around top left (instead of the geometrical center) */
+}
